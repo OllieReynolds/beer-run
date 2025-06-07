@@ -25,6 +25,8 @@ The output will be in the `dist/` folder. You can upload these files to any stat
 
 ## GitHub Pages
 
-The `vite.config.ts` file is configured with a `base` path so the built files work when served from
-`https://<user>.github.io/beer-run/`. After building, you can publish the contents of the `dist/`
-directory to the `gh-pages` branch of your repository or use GitHub Actions to automate the deploy.
+The project is preconfigured to deploy to GitHub Pages. A workflow at
+`.github/workflows/gh-pages.yml` builds the site and publishes the `dist/` directory whenever changes
+are pushed to the `main` branch. Simply enable GitHub Pages for the repository and choose the
+**GitHub Actions** source. The deployed site will be available at
+`https://<user>.github.io/beer-run/`.
