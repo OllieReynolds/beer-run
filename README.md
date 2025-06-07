@@ -22,3 +22,9 @@ npm run build
 ```
 
 The output will be in the `dist/` folder. You can upload these files to any static host or share them directly.
+
+## GitHub Pages
+
+The `vite.config.ts` file is configured with a `base` path so the built files work when served from
+`https://<user>.github.io/beer-run/`. After building, you can publish the contents of the `dist/`
+directory to the `gh-pages` branch of your repository or use GitHub Actions to automate the deploy.
