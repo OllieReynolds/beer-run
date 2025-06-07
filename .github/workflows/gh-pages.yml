@@ -2,7 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -23,9 +24,10 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./dist  # Upload build output as Pages artifact :contentReference[oaicite:0]{index=0}
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -34,4 +36,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4  # Deploy artifact to GitHub Pages :contentReference[oaicite:1]{index=1}
